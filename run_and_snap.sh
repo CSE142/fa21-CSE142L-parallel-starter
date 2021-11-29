@@ -15,7 +15,7 @@ make matexp.exe && (
     #./autograde.py --submission . --results results.json --scores scores.csv
 
     #  Replace the lines above with these to turn of the regressions
-    cse142 job run --lab caches2 --force "make bench.csv";
+    cse142 job run --lab $(cat short_name) --force "make bench.csv";
     ./autograde.py --submission . --results results.json --scores scores.csv
     if ! grep "The machine you ran was slow" results.json;  then
        pretty-csv scores.csv
